@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="main">
+        <form action="/" method="post">
+            <input type="text" name="cityName" id="cityName" placeholder="Search Any Location">
+            <button>Get Weather</button>
+        </form>
+        <h1><%= sendData.location %></h1>
+        <h5><%= new Date() %></h5>      
+        <div class="container">
+            <div class="box-1">
+                <h2>Summary</h2>
+                <div>
+                    <img src="<%= sendData.iconurl %>" alt="">
+                </div>
+                <div>
+                    <h3>Temperature</h3>
+                    <h4>In Degrees: <%= sendData.temp %> &deg;c</h4>
+                </div>
+                <div>
+                    <h3>Main</h3>
+                    <h4><%= sendData.main %></h4>
+                </div>
+            </div>
+            <div class="box-2">
+                <h2>Description</h2>
+                <div>
+                    <h3>Overall Description:</h3>
+                    <h4><%= sendData.desc %></h4>
+                </div>
+                <div>
+                    <h3>Cloud Coverage:</h3>
+                    <h4><%= sendData.clouds %></h4>
+                </div>
+                <div>
+                    <h3>Visibility:</h3>
+                    <h4><%= sendData.visibility %></h4>
+                </div>
+            </div>
+            <div class="box-3">
+                <h2>Other info</h2>
+                <div>
+                    <h3>Humidity:</h3>
+                    <h4><%= sendData.humidity %></h4>
+                </div>
+                <div>
+                    <h3>Pressure:</h3>
+                    <h4><%= sendData.pressure %></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
